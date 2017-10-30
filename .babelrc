@@ -1,0 +1,22 @@
+{
+    "presets": ["es2015", "react"],
+    "plugins": [
+        ["module-resolver", {
+            "root": ["./"],
+            "alias": {
+                "js": "./src/js",
+                "scss": "./src/scss"
+            }
+        }],
+        ["transform-class-properties"],
+        ["transform-object-rest-spread"],
+        ["array-includes"]
+    ],
+    "env": {
+        "test": {
+            "plugins": [
+                "istanbul"
+            ]
+        }
+    }
+}

@@ -1,0 +1,9 @@
+.DS_Store
+thumbs.db
+_webpack-report.html
+
+node_modules/
+.idea/
+dist/
+coverage/
+.nyc_output/

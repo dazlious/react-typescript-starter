@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "jsx": "react",
+        "module": "es2015",
+        "noImplicitAny": false,
+        "outDir": "./dist/",
+        "preserveConstEnums": true,
+        "removeComments": true,
+        "allowSyntheticDefaultImports": true,
+        "moduleResolution": "node",
+        "target": "es5",
+        "baseUrl": ".",
+        "lib": [
+            "dom",
+            "es7"
+        ],
+        "paths": {
+            "js/*": ["src/js/*"],
+            "scss/*": ["src/scss/*"]
+        }
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}
