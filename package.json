@@ -10,7 +10,7 @@
     }
   ],
   "engines": {
-    "node": "7.10.2",
+    "node": "7.10.1",
     "npm": "4.2.0"
   },
   "repository": {
@@ -29,11 +29,11 @@
     ]
   },
   "scripts": {
-    "build": "npm run lint && NODE_ENV=production webpack --progress",
-    "clean": "npm install rimraf && rimraf dist node_modules _webpack-report.html coverage .nyc_output",
+    "build": "npm run lint && cross-env NODE_ENV=production webpack --progress",
+    "clean": "npm install rimraf -g && rimraf dist coverage _webpack-report.html .nyc_output node_modules",
     "lint": "tslint --config tslint.json --project tsconfig.json",
-    "start": "NODE_ENV=development webpack-dashboard -m -c white -t dev-center -- webpack-dev-server",
-    "test": "NODE_ENV=test nyc --reporter=html mocha --recursive --require babel-register --require ignore-styles --require ./test/setup.js --reporter spec './test/**/*.spec.js'"
+    "start": "webpack-dashboard -m -c white -t dev-center -- cross-env NODE_ENV=development webpack-dev-server",
+    "test": "npm run lint && cross-env NODE_ENV=test nyc --reporter=html mocha --recursive --require babel-register --require ignore-styles --require test/setup.js --reporter spec \"test/**/*.spec.js\""
   },
   "dependencies": {
     "history": "^4.7.2",
@@ -61,7 +61,6 @@
     "@types/i18next": "^8.4.2",
     "@types/lodash-es": "^4.17.0",
     "@types/mocha": "^2.2.44",
-    "@types/moment": "^2.13.0",
     "@types/prop-types": "^15.5.2",
     "@types/query-string": "^5.0.1",
     "@types/react": "^16.0.18",
@@ -69,10 +68,7 @@
     "@types/react-i18next": "^4.6.0",
     "@types/react-redux": "^5.0.11",
     "@types/react-router": "^4.0.16",
-    "@types/redux": "^3.6.0",
     "@types/redux-logger": "^3.0.5",
-    "@types/redux-thunk": "^2.1.0",
-    "@types/reselect": "^2.2.0",
     "@types/sinon": "^2.3.7",
     "autoprefixer": "^7.1.6",
     "babel-core": "^6.26.0",
@@ -85,6 +81,7 @@
     "babel-preset-react": "^6.24.1",
     "chai": "^4.1.2",
     "chai-spies": "^0.7.1",
+    "cross-env": "^5.1.1",
     "css-loader": "^0.28.7",
     "csscomb": "^4.2.0",
     "cssnano": "^3.10.0",
@@ -109,7 +106,6 @@
     "tslint": "^5.8.0",
     "tslint-config-airbnb": "^5.3.0",
     "typescript": "^2.5.3",
-    "typings": "^2.1.1",
     "webpack": "^3.8.1",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dashboard": "^1.0.0",
