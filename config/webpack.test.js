@@ -24,13 +24,38 @@ module.exports = (env) => ({
     module: {
         loaders: [
             {
+                enforce: 'pre',
+                test: /\.js$/,
+                loader: 'source-map-loader'
+            },
+            {
                 test: /\.(tsx|ts)?$/,
-                loader: "ts-loader",
-                exclude: /node_modules/
+                use: [{
+                        loader: 'awesome-typescript-loader',
+                        query: {
+                            sourceMap: false,
+                            inlineSourceMap: true
+                        }
+                    }],
             },
             {
                 test: /\.scss$/,
                 loader: 'null-loader'
+            },
+            {
+                enforce: 'post',
+                test: /\.(js|jsx|ts|tsx)$/,
+                loader: 'istanbul-instrumenter-loader',
+                query: {
+                    esModules: true
+                },
+                include: path.resolve(__dirname, "../", "src/"),
+                exclude: [
+                    path.resolve(__dirname, "../", 'src/i18next.ts'),
+                    /\.(e2e|spec)\.(ts|tsx)$/,
+                    /src\/test-utils/,
+                    /node_modules/
+                ]
             }
         ]
     },

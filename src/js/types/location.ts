@@ -1,18 +1,20 @@
-import { LOCATION_SET } from 'js/constants/actionTypes';
 import { OtherAction } from 'js/types/actions';
+import { LOCATION_SET } from 'js/constants/actionTypes/location';
 import { Dictionary } from 'js/types/dictionary';
 
-export type ExtendedLocation = Location & {
-    query: Dictionary<string>;
+export type Location = {
+    query?: Dictionary<string>;
+    pathname?: string;
+    search?: string;
 };
 
 export type LocationDefaultState = {
-    location: ExtendedLocation;
+    location: Location;
 };
 
 export type SetLocationAction = {
     type: LOCATION_SET;
-    location: ExtendedLocation;
+    location: Location;
 };
 
 export type LocationAction = SetLocationAction | OtherAction;

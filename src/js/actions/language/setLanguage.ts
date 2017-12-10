@@ -1,9 +1,9 @@
-import { LANGUAGE_SET } from 'js/constants/actionTypes';
-import { LANGUAGE_DEFAULT } from 'js/constants/language';
 import i18next from 'i18next';
 import { ALLOWED_LANGUAGES } from '../../../i18next';
 
 import moment from 'moment';
+import { LANGUAGE_DEFAULT } from 'js/constants/language';
+import { LANGUAGE_SET } from 'js/constants/actionTypes/language';
 
 export default (language: string = LANGUAGE_DEFAULT) => (dispatch, getState) => {
     let newLanguage: string = language;

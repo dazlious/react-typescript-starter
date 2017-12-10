@@ -1,9 +1,7 @@
 import { combineReducers } from 'redux';
-
-import root from 'js/reducers/root';
-
-import language from 'js/reducers/language';
-import location from 'js/reducers/location';
+import language from 'js/reducers/language/language';
+import location from 'js/reducers/location/location';
+import root from 'js/reducers/root/root';
 
 export { root };
 

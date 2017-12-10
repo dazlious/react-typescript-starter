@@ -1,8 +1,7 @@
 import { expect } from 'chai';
-import { describe, it } from 'mocha';
-import createMockedStore from '../../utils/createMockedStore';
 import setLocation from 'js/actions/location/setLocation';
-import { LOCATION_SET } from 'js/constants/actionTypes';
+import { LOCATION_SET } from 'js/constants/actionTypes/location';
+import createMockedStore from '../../../test-utils/createMockedStore';
 
 let state;
 const store = createMockedStore(() => state);
@@ -15,7 +14,6 @@ describe('actions: location: setLocation', () => {
 
     it('should set location', () => {
         const pathname = '/my/path';
-
         store.dispatch(setLocation({ pathname }));
         expect(store.getActions()).to.deep.equal([
             { type: LOCATION_SET, location: { pathname, query: {} } },

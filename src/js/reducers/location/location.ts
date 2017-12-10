@@ -1,6 +1,6 @@
-import { LOCATION_SET } from 'js/constants/actionTypes';
-import { LocationAction, LocationDefaultState } from 'js/types/location';
+import { LocationAction, LocationDefaultState, SetLocationAction } from 'js/types/location';
 import { OtherAction } from 'js/types/actions';
+import { LOCATION_SET } from 'js/constants/actionTypes/location';
 
 const defaultState: LocationDefaultState = {
     location: null,
@@ -12,7 +12,7 @@ export default (
 ) => {
     switch (action.type) {
         case LOCATION_SET:
-            return action.location;
+            return (action as SetLocationAction).location;
         default:
             return state;
     }

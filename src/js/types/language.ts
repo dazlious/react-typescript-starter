@@ -1,5 +1,5 @@
-import { LANGUAGE_SET } from 'js/constants/actionTypes';
 import { OtherAction } from 'js/types/actions';
+import { LANGUAGE_SET } from 'js/constants/actionTypes/language';
 
 export type LanguageDefaultState = {
     language: string;

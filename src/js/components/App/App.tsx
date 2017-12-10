@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import { translate } from 'react-i18next';
 import 'scss/app/app.scss';
 
-interface IProps {
+interface AppProps {
     t: Function;
 }
 
-const App: StatelessComponent<IProps|{}> = ({ t }: IProps) => (
+const App: StatelessComponent<AppProps> = ({ t }: AppProps) => (
     <div className="app">
-        <h1 className="app__title">{t('welcome')} React Starter</h1>
+        <h1 className="app__title">{t('welcome')} TrainInc</h1>
     </div>
 );
 
@@ -19,3 +19,4 @@ App.propTypes = {
 
 export { App as PureComponent };
 export default translate('App')(App);
+

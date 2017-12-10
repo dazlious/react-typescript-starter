@@ -1,8 +1,7 @@
 import React from 'react';
 import { expect } from 'chai';
-import { describe, it } from 'mocha';
 import { shallow } from 'enzyme';
-import { PureComponent as NotFound } from 'js/components/NotFound';
+import { PureComponent as NotFound } from './NotFound';
 
 const defaultProps = {
     t: () => {},

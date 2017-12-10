@@ -1,11 +1,11 @@
 import React from 'react';
 import { expect } from 'chai';
-import { describe, it } from 'mocha';
 import { shallow } from 'enzyme';
-import { PureComponent as App } from 'js/components/App';
+import { PureComponent as App } from './App';
 
 const defaultProps = {
     t: () => {},
+    isAuthenticated: false,
 };
 
 const getWrapper = (props = defaultProps) => shallow(<App {...props} />);

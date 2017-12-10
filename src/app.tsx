@@ -7,13 +7,12 @@ import { I18nextProvider } from 'react-i18next';
 import i18next from './i18next';
 import createHistory from 'history/createBrowserHistory';
 
-import App from 'js/components/App';
-import NotFound from 'js/components/NotFound';
+import App from 'js/components/App/App';
+import NotFound from 'js/components/NotFound/NotFound';
 
 import { LOCATION_HOME_DEFAULT } from 'js/constants/location';
 
 import 'scss/general.scss';
-
 
 const history = createHistory();
 const store = createStore(history);

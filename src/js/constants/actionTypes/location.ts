@@ -1,0 +1,2 @@
+export type LOCATION_SET = 'LOCATION_SET';
+export const LOCATION_SET: LOCATION_SET = 'LOCATION_SET';

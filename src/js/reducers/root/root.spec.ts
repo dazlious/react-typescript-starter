@@ -1,6 +1,5 @@
 import chai, { expect } from 'chai';
-import { describe, it } from 'mocha';
-import reducer from 'js/reducers/root';
+import reducer from 'js/reducers/root/root';
 
 const spyReducer = chai.spy(state => state);
 const cleanState = {
@@ -18,6 +17,6 @@ describe('reducers: root', () => {
     it('should return state unchanged', () => {
         const action = { type: 'UNKNOWN_ACTION' };
         expect(reducer(spyReducer)(dirtyState, action)).to.be.eql(dirtyState);
-        expect(spyReducer).to.have.been.called.once.with.exactly(dirtyState, action);
+        expect(spyReducer).to.have.been.called.with.exactly(dirtyState, action);
     });
 });

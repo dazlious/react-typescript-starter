@@ -1,9 +1,9 @@
 import { parse } from 'query-string';
-import { LOCATION_SET } from 'js/constants/actionTypes';
 import { Dictionary } from 'js/types/dictionary';
-import { ExtendedLocation, LocationAction } from 'js/types/location';
+import { Location, LocationAction } from 'js/types/location';
+import { LOCATION_SET } from 'js/constants/actionTypes/location';
 
-const withQuery = (location: Location): ExtendedLocation => {
+const withQuery = (location: Location): Location => {
     let query: Dictionary<string> = {};
     if (location.search) {
         try {

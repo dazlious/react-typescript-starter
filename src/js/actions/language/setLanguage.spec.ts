@@ -1,11 +1,10 @@
-import { describe, it } from 'mocha';
 import { expect } from 'chai';
 import moment from 'moment';
-import i18next from '../../../src/i18next';
-import createMockedStore from '../../utils/createMockedStore';
+import i18next from '../../../i18next';
 import setLanguage from 'js/actions/language/setLanguage';
-import { LANGUAGE_SET } from 'js/constants/actionTypes';
 import { LANGUAGE_DEFAULT } from 'js/constants/language';
+import { LANGUAGE_SET } from 'js/constants/actionTypes/language';
+import createMockedStore from '../../../test-utils/createMockedStore';
 
 let state;
 const store = createMockedStore(() => state);
@@ -30,7 +29,7 @@ describe('actions: language: setLanguage', () => {
 
         store.dispatch(setLanguage(language));
         expect(store.getActions()).to.deep.equal([
-            { type: LANGUAGE_SET, language },
+            { language, type: LANGUAGE_SET },
         ]);
         expect(moment.locale()).to.equal(language);
         expect(i18next.language).to.equal(language);
@@ -41,7 +40,7 @@ describe('actions: language: setLanguage', () => {
 
         store.dispatch(setLanguage(language));
         expect(store.getActions()).to.deep.equal([
-            { type: LANGUAGE_SET, language },
+            { language, type: LANGUAGE_SET },
         ]);
         expect(moment.locale()).to.equal(language);
         expect(i18next.language).to.equal(language);

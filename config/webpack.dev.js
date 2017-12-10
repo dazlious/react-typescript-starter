@@ -24,8 +24,13 @@ module.exports = (env) => ({
         loaders: [
             {
                 test: /\.(tsx|ts)?$/,
-                loader: "ts-loader",
-                exclude: /node_modules/
+                use: [{
+                    loader: 'awesome-typescript-loader',
+                    query: {
+                        sourceMap: true,
+                    }
+                }],
+                exclude: [/\.(spec)\.(ts|tsx)$/, /node_modules/]
             },
             {
                 test: /\.scss$/,
