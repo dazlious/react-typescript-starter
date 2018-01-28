@@ -70,7 +70,7 @@ module.exports = (env) => ({
         new FaviconsWebpackPlugin(path.resolve(__dirname, '../', 'src/assets/logo.png')),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, '../', 'src/html/index.html'),
-            title: 'React Starter - Development Environment',
+            title: 'React TypeScript Starter Boilerplate - Development Environment',
             filename: path.resolve(__dirname, '../', 'src/index.html'),
         }),
         new DefinePlugin({

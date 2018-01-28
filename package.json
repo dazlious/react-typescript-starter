@@ -1,5 +1,5 @@
 {
-    "name": "react-starter",
+    "name": "react-typescript-starter",
     "version": "1.0.1",
     "license": "UNLICENSED",
     "author": {
@@ -12,12 +12,12 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/dazlious/react-starter.git"
+        "url": "https://github.com/dazlious/react-typescript-starter.git"
     },
     "bugs": {
-        "url": "https://github.com/dazlious/react-starter/issues"
+        "url": "https://github.com/dazlious/react-typescript-starter/issues"
     },
-    "homepage": "https://github.com/dazlious/react-starter",
+    "homepage": "https://github.com/dazlious/react-typescript-starter",
     "description": "Frontend application boilerplate with TypeScript, React, Redux, Webpack and more",
     "private": true,
     "scripts": {

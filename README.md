@@ -1,4 +1,4 @@
-# Frontend
+# Frontend React Typescript Starter Boilerplate
 
 ## nvm: node and npm version
 
