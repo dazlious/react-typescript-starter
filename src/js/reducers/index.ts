@@ -1,11 +1,16 @@
-import { combineReducers } from 'redux';
-import language from 'js/reducers/language/language';
-import location from 'js/reducers/location/location';
+import location, { LocationState } from 'js/reducers/location/location';
 import root from 'js/reducers/root/root';
+import settings, { SettingsState } from 'js/reducers/settings/settings';
+import { combineReducers } from 'redux';
 
 export { root };
 
-export default combineReducers({
-    language,
+export interface RootState {
+    settings: SettingsState;
+    location: LocationState;
+}
+
+export default combineReducers<RootState>({
+    settings,
     location,
 });

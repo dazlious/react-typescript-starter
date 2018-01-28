@@ -6,9 +6,14 @@ const cleanState = {
     location: 'location',
     language: 'language',
 };
-const dirtyState = { ...cleanState,
+const dirtyState = {
+    ...cleanState,
     a: 'b',
     c: 'd',
+    settings: {
+        a: 'a',
+        b: 'b',
+    },
 };
 
 describe('reducers: root', () => {

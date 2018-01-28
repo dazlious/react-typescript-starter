@@ -1,18 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Redirect, Route, Router, Switch } from 'react-router';
-import { Provider } from 'react-redux';
-import createStore from 'js/store';
-import { I18nextProvider } from 'react-i18next';
-import i18next from './i18next';
 import createHistory from 'history/createBrowserHistory';
-
 import App from 'js/components/App/App';
 import NotFound from 'js/components/NotFound/NotFound';
-
-import { LOCATION_HOME_DEFAULT } from 'js/constants/location';
+import { LOCATION_DEFAULT, LOCATION_START } from 'js/constants/location';
+import createStore from 'js/store';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { I18nextProvider } from 'react-i18next';
+import { Provider } from 'react-redux';
+import { Redirect, Route, Router, Switch } from 'react-router';
 
 import 'scss/general.scss';
+import i18next from './i18next';
+import './numeral';
 
 const history = createHistory();
 const store = createStore(history);
@@ -22,9 +21,9 @@ ReactDOM.render(
         <Provider store={store}>
             <Router history={history}>
                 <Switch>
-                    <Redirect from="/" to={LOCATION_HOME_DEFAULT} exact />
-                    <Route exact path="/start" component={App}/>
-                    <Route component={NotFound} />
+                    <Redirect from="/" to={LOCATION_DEFAULT} exact/>
+                    <Route path={LOCATION_START} component={App} exact/>
+                    <Route path="*" component={NotFound}/>
                 </Switch>
             </Router>
         </Provider>

@@ -10,10 +10,10 @@ module.exports = config => {
             captureConsole: false
         },
         files: [
-            { pattern: './config/spec-bundle.js', watched: false },
-            { pattern: './src/**/*', watched: false, included: false, served: true, nocache: false }
+            {pattern: './config/spec-bundle.js', watched: false},
+            {pattern: './src/**/*', watched: false, included: false, served: true, nocache: false}
         ],
-        preprocessors: { './config/spec-bundle.js': ['coverage', 'webpack', 'sourcemap'] },
+        preprocessors: {'./config/spec-bundle.js': ['coverage', 'webpack', 'sourcemap']},
         webpack: testWebpackConfig,
         coverageReporter: {
             type: 'in-memory'

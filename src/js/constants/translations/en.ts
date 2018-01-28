@@ -1,17 +1,8 @@
 export default {
     'App': {
-        'welcome': 'Welcome to',
+        'welcome': 'Welcome to React Starter Boilerplate',
     },
     'NotFound': {
-        'not-found': 'Site not found',
-    },
-    'Login': {
-        'email': 'Email',
-        'heading': 'Please log in',
-        'login': 'Login',
-        'password': 'Password',
-    },
-    'Logout': {
-        'logout': 'Logout',
+        'not-found': 'Page not found',
     },
 };

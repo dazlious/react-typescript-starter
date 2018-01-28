@@ -1,11 +1,10 @@
-import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import { PureComponent as App } from './App';
+import React from 'react';
+import { AppProps, PureComponent as App } from './App';
 
-const defaultProps = {
+const defaultProps: AppProps = {
     t: () => {},
-    isAuthenticated: false,
 };
 
 const getWrapper = (props = defaultProps) => shallow(<App {...props} />);
@@ -13,6 +12,6 @@ const getWrapper = (props = defaultProps) => shallow(<App {...props} />);
 describe('Components: App', () => {
     it('should render', () => {
         const wrapper = getWrapper();
-        expect(wrapper.hasClass('app')).to.be.true;
+        expect(wrapper.hasClass('app')).to.be.true();
     });
 });

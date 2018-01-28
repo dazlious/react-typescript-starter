@@ -1,6 +1,6 @@
 import { expect } from 'chai';
-import setLocation from 'js/actions/location/setLocation';
-import { LOCATION_SET } from 'js/constants/actionTypes/location';
+import { LOCATION_SET } from 'js/constants/actionTypes/location/location';
+import setLocation from './setLocation';
 import createMockedStore from '../../../test-utils/createMockedStore';
 
 let state;

@@ -1,24 +1,24 @@
 /* global require, __dirname, module */
-const DefinePlugin = require("webpack/lib/DefinePlugin");
-const ContextReplacementPlugin = require("webpack/lib/ContextReplacementPlugin");
+const DefinePlugin = require('webpack/lib/DefinePlugin');
+const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin');
 
-const path = require("path");
+const path = require('path');
 const ALLOWED_MOMENT_LANGUAGES = ['de', 'en'];
 
 module.exports = (env) => ({
     entry: [
-        "./src/app.tsx"
+        './src/app.tsx'
     ],
     output: {
-        path: path.resolve(__dirname, "../", "dist"),
+        path: path.resolve(__dirname, '../', 'dist'),
         publicPath: '/dist',
-        filename: "bundle.js"
+        filename: 'bundle.js'
     },
     resolve: {
-        extensions: [".ts", ".tsx", ".js", ".jsx"],
+        extensions: ['.ts', '.tsx', '.js', '.jsx'],
         alias: {
-            "js": path.resolve(__dirname, "../", "src/js/"),
-            "scss": path.resolve(__dirname, "../", "src/scss/")
+            'js': path.resolve(__dirname, '../', 'src/js/'),
+            'scss': path.resolve(__dirname, '../', 'src/scss/')
         }
     },
     module: {
@@ -30,17 +30,23 @@ module.exports = (env) => ({
             },
             {
                 test: /\.(tsx|ts)?$/,
-                use: [{
+                use: [
+                    {
                         loader: 'awesome-typescript-loader',
                         query: {
                             sourceMap: false,
                             inlineSourceMap: true
                         }
-                    }],
+                    }
+                ],
             },
             {
-                test: /\.scss$/,
+                test: /\.(scss|gif|png|jpe?g|svg)$/,
                 loader: 'null-loader'
+            },
+            {
+                test: /\.(eot|woff2?|svg|ttf)([?]?.*)$/,
+                use: 'null-loader'
             },
             {
                 enforce: 'post',
@@ -49,9 +55,9 @@ module.exports = (env) => ({
                 query: {
                     esModules: true
                 },
-                include: path.resolve(__dirname, "../", "src/"),
+                include: path.resolve(__dirname, '../', 'src/'),
                 exclude: [
-                    path.resolve(__dirname, "../", 'src/i18next.ts'),
+                    path.resolve(__dirname, '../', 'src/i18next.ts'),
                     /\.(e2e|spec)\.(ts|tsx)$/,
                     /src\/test-utils/,
                     /node_modules/
@@ -62,10 +68,13 @@ module.exports = (env) => ({
     devServer: {
         historyApiFallback: true
     },
+    node: {
+        fs: 'empty'
+    },
     plugins: [
         new ContextReplacementPlugin(/moment[\/\\]locale$/, new RegExp(ALLOWED_MOMENT_LANGUAGES.join('|'))),
         new DefinePlugin({
-            "process.env": {
+            'process.env': {
                 NODE_ENV: JSON.stringify(env)
             }
         })

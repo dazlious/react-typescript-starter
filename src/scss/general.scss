@@ -1,3 +1,6 @@
+@import 'colors';
+@import 'variables';
+
 html,
 body {
     height: 100%;
@@ -6,9 +9,19 @@ body {
     position: relative;
     width: 100%;
 }
-body {
-    font-family: sans-serif;
-}
+
 * {
     box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    font-weight: 400;
+}
+
+#root {
+    min-width: 100%;
+    min-height: 100%;
+}
+
+::selection {
+    background: map_get($colors, primary);
+    color: map_get($colors, lightest);
 }

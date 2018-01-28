@@ -15,11 +15,17 @@
             "es7"
         ],
         "paths": {
-            "js/*": ["src/js/*"],
-            "scss/*": ["src/scss/*"]
+            "js/*": [
+                "src/js/*"
+            ],
+            "scss/*": [
+                "src/scss/*"
+            ]
         }
     },
     "exclude": [
+        "**/*.spec.ts",
+        "**/*.spec.tsx",
         "node_modules"
     ]
 }

@@ -1,6 +1,6 @@
 import { expect } from 'chai';
-import reducer from 'js/reducers/location/location';
-import { LOCATION_SET } from 'js/constants/actionTypes/location';
+import { LOCATION_SET } from 'js/constants/actionTypes/location/location';
+import reducer from './location';
 
 describe('reducers: location', () => {
     const initialState = { location: null };

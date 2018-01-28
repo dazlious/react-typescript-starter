@@ -1,0 +1,11 @@
+$colors: (
+        darkest: #000,
+        lightest: #fff,
+        darker: #595956,
+        lighter: #f3f3f3,
+        medium: #a5a6a1,
+        highlight: #f47407,
+        highlight-light: lighten(#f47407, 10),
+        primary: #045aa5,
+        primary-light: lighten(#045aa5, 10)
+);

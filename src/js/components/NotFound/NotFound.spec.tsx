@@ -1,6 +1,6 @@
-import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
+import React from 'react';
 import { PureComponent as NotFound } from './NotFound';
 
 const defaultProps = {
@@ -12,6 +12,6 @@ const getWrapper = (props = defaultProps) => shallow(<NotFound {...props} />);
 describe('Components: NotFound', () => {
     it('should render', () => {
         const wrapper = getWrapper();
-        expect(wrapper.hasClass('not-found')).to.be.true;
+        expect(wrapper.hasClass('not-found')).to.be.true();
     });
 });
